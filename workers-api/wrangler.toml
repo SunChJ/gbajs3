@@ -1,0 +1,25 @@
+# See https://developers.cloudflare.com/workers/wrangler/configuration/
+name = "gbajs3-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "gbajs3-db"
+database_id = "placeholder-replace-with-actual-id"
+
+# R2 Storage binding
+[[r2_buckets]]
+binding = "STORAGE"
+bucket_name = "gbajs3-storage"
+
+[vars]
+ENVIRONMENT = "production"
+
+# For local development
+[env.dev]
+name = "gbajs3-api-dev"
+
+[env.dev.vars]
+ENVIRONMENT = "development"
