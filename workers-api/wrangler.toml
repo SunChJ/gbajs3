@@ -7,7 +7,7 @@ compatibility_date = "2024-01-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "gbajs3-db"
-database_id = "placeholder-replace-with-actual-id"
+database_id = "ec77c00d-b488-4dc4-989f-f6fff0cf2592"
 
 # R2 Storage binding
 [[r2_buckets]]
