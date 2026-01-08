@@ -52,13 +52,13 @@ auth.post('/login', async (c) => {
     const accessToken = await createAccessToken(user.storage_dir, secret);
     const refreshToken = await createRefreshToken(newTokenId, user.storage_dir, newTokenSlug);
     
-    // Set refresh token cookie
+    // Set refresh token cookie (SameSite=None for cross-origin)
     const cookie = createCookie('refresh-tok', refreshToken, {
       path: '/api/tokens/refresh',
       maxAge: 7 * 60 * 60, // 7 hours
       httpOnly: true,
       secure: true,
-      sameSite: 'Strict'
+      sameSite: 'None'
     });
     
     return c.json(accessToken, 200, {
@@ -78,7 +78,7 @@ auth.post('/logout', async (c) => {
     maxAge: -1,
     httpOnly: true,
     secure: true,
-    sameSite: 'Strict'
+    sameSite: 'None'
   });
   
   return c.text('Logged out', 200, {
