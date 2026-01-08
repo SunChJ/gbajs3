@@ -4,12 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "db:create": "wrangler d1 create gbajs3-db",
-    "db:migrate": "wrangler d1 execute gbajs3-db --file=./schema.sql",
-    "db:migrate:local": "wrangler d1 execute gbajs3-db --local --file=./schema.sql",
-    "r2:create": "wrangler r2 bucket create gbajs3-storage"
+    "dev": "npx wrangler dev",
+    "deploy": "npx wrangler deploy",
+    "db:create": "npx wrangler d1 create gbajs3-db",
+    "db:migrate": "npx wrangler d1 execute gbajs3-db --file=./schema.sql",
+    "db:migrate:local": "npx wrangler d1 execute gbajs3-db --local --file=./schema.sql",
+    "r2:create": "npx wrangler r2 bucket create gbajs3-storage"
   },
   "dependencies": {
     "hono": "^4.3.0",
